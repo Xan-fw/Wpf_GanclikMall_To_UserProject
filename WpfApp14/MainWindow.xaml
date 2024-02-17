@@ -1,0 +1,153 @@
+﻿<Window 
+        x:Name="WindownName"
+        x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="Ganjlik Mall" Height="450" Width="1000">
+
+
+    <Grid x:Name="MainGrid">
+
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#2d1c67"/>
+                <Setter Property="Grid.Column" Value="1"/>
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="Width" Value="160"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="1,1,1,1"/>
+                <Setter Property="FontFamily" Value=" 'r' Arial,sans-serif"/>
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="TextBlock">
+                <Setter Property="Width" Value="116"/>
+                <Setter Property="Margin" Value="4,4,4,4"/>
+            </Style>
+            <Style TargetType="Hyperlink">
+                <Setter Property="Foreground" Value="Gray" ></Setter>
+                <Setter Property="FontFamily" Value="Bahnschrift SemiBold"/>
+            </Style>
+
+        </Grid.Resources>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="155" />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--______ Frame & Grid______-->
+            <Grid Grid.Column = "1" Background="WhiteSmoke">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="1" x:Name="BrendsFrame" Background="WhiteSmoke" NavigationUIVisibility="Hidden"></Frame>
+
+                <Button x:Name="Button_Map"
+                        HorizontalAlignment="Right" VerticalAlignment="Top"
+                        Margin="0,10,40,0" Height="30" Width="130" FontSize="13" Click="Button_ClickOpenToMap">■ Interactive map
+                    <Button.Effect>
+                        <DropShadowEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="0.4" BlurRadius="30"/>
+                    </Button.Effect>
+                </Button>
+            </Grid>
+            
+
+            <!--_===== Frame & Grid=====-->
+
+            <!--__________________ Grid To buttons && Logo _____________________-->
+            <Grid x:Name="Grid_Brands" Grid.Row="0" >
+
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="100" />
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <!--__________________ Grid To buttons _____________________-->
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions >
+                        <RowDefinition/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" >
+                        <Button x:Name="Button_PageToStores"
+                            MouseEnter="Button_ChangeAppearance"
+                            MouseLeave="Button_ChangeToOriginal" 
+                            Click="Button_OpenPage_Stores">Stores
+                        </Button>
+
+
+                        <Button x:Name="Button_PageToRestaurants"
+                            MouseEnter="Button_ChangeAppearance"
+                            MouseLeave="Button_ChangeToOriginal"
+                            Click="Button_OpenPage_Restaurants">Restaurants
+                        </Button>
+
+
+                        <Button x:Name="Button_PageToEntertainment"
+                            MouseEnter="Button_ChangeAppearance"
+                            MouseLeave="Button_ChangeToOriginal"
+                            Click="Button_OpenPage_Entertainment">Entertainment
+                        </Button>
+
+                        <Button x:Name="Button_PageToNews_Events"
+                            MouseEnter="Button_ChangeAppearance"
+                            MouseLeave="Button_ChangeToOriginal"
+                            Click="Button_OpenPage_News_Events">News | Events
+                        </Button>
+
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" >
+                        <TextBlock>
+                        <Hyperlink Click="ButtonClick_WorkHoursInfo">Work hours</Hyperlink >
+                        </TextBlock>
+                        <TextBlock>
+                        <Hyperlink Click="ButtonClick_HowToGet">How to get</Hyperlink>
+                        </TextBlock>
+                        <TextBlock>
+                        <Hyperlink Click="ButtonClick_ContactInformation">Contacts</Hyperlink>
+                        </TextBlock>
+                        <TextBlock>
+                        <Hyperlink Click="ButtonClick_LeasingInquiries" >Leasing Inquiries</Hyperlink>
+                        </TextBlock>
+                        <TextBlock Foreground="Gray" FontFamily="Cascadia Mono SemiBold" Width="137" >Ⓒ 2023 Ganjlik Mall</TextBlock>
+                    </StackPanel>
+
+                </Grid>
+                <!--=============== Grid To buttons ===============-->
+            </Grid>
+        </Grid>
+        <!--=============== Grid To buttons && Logo ===============-->
+    </Grid>
+</Window>

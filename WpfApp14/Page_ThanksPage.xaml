@@ -1,0 +1,42 @@
+﻿    <Page x:Class="WpfApp3.Page_ThanksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp6"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000"
+      Title="Thank You Page">
+    <ScrollViewer>
+
+        <Grid Background="WhiteSmoke" Panel.ZIndex="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="280"/>
+                <RowDefinition Height="180" />
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Stretch="Fill" Source="https://www.nwconstruction.com/site/assets/files/1277/ganjlik-mall-1b-1440x960.jpg" />
+
+            <StackPanel Grid.Row="1" >
+                <TextBlock Foreground="Black" HorizontalAlignment="Center" FontSize="50" FontFamily="Bahnschrift SemiBold">
+                    <Run Text="Thank You!"/>
+                </TextBlock>
+                <TextBlock Foreground="Gray" HorizontalAlignment="Center" FontFamily="Bahnschrift SemiBold" FontSize="16" Height="38">
+                    If there is a suitable area in the Mall, we will <LineBreak></LineBreak> contact you according to the provided information.
+                </TextBlock>
+            </StackPanel>
+
+            <TextBlock Grid.Row="1" Margin="0,140,0,0" HorizontalAlignment="Center" FontSize="30">
+                <Hyperlink Click="ButtonClick_LeasingInquiries" Foreground="Blue">they will come back</Hyperlink >
+            </TextBlock>
+
+            <Canvas Panel.ZIndex="-1">
+                <Ellipse Fill="Orange" Width="450" Height="450" Canvas.Left="-190" Canvas.Top="50">
+                    <Ellipse.Effect>
+                        <DropShadowEffect Color="Black" Direction="300" ShadowDepth="3" Opacity="0.3" BlurRadius="70"/>
+                    </Ellipse.Effect>
+                </Ellipse>
+            </Canvas>
+        </Grid>
+    </ScrollViewer>
+</Page>
